@@ -11,14 +11,14 @@ stages{
 post {
   success { 
            echo 'Now Archiving...testing'
-           archiveArtifacts artifacts :'**/target/*.war'
+           archiveArtifacts artifacts :'**/*.war'
            }
        }
     }
 	stage('Deploy'){
-	steps{
-	build job:'deploy to staging'
-  }
-}
-}
+	  steps{
+	  build job:'deploy to staging'
+       } 
+     }
+   }
 }
